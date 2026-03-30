@@ -1,15 +1,13 @@
 'use server'
 
-import { PASSWORD_MIN_LENGTH, SESSION_TTL_DAYS } from '@/src/auth/constants'
+import { PASSWORD_MIN_LENGTH } from '@/src/auth/constants'
 import { z } from 'zod'
 import { db } from '@/src/db'
 import { users, sessions } from '@/src/db/schema'
 import { redirect } from 'next/navigation'
-import { randomBytes } from 'node:crypto'
-import { hashSessionToken } from '@/src/auth/token'
+import { generateSessionTokenAndExpiry } from '@/src/auth/token'
 import { hashPassword } from '@/src/auth/password'
 import { setSessionCookie } from '@/src/auth/session-cookie'
-import { addDays } from '@/src/lib/date'
 import { getStringField } from '@/src/lib/form-data'
 import { getPostgresErrorDetails } from '@/src/lib/db-errors'
 
@@ -66,9 +64,7 @@ export const signUpAction = async (
 
   try {
     const passwordHash = await hashPassword(password)
-    const rawToken = randomBytes(32).toString('hex')
-    const tokenHash = hashSessionToken(rawToken)
-    const expiresAt = addDays(new Date(), SESSION_TTL_DAYS)
+    const { rawToken, tokenHash, expiresAt } = generateSessionTokenAndExpiry()
 
     await db.transaction(async (tx) => {
       const [{ userId }] = await tx
