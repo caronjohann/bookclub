@@ -1,11 +1,15 @@
 import 'server-only'
+
 import { cookies } from 'next/headers'
 import { eq, and, gt } from 'drizzle-orm'
 import { db } from '../db'
 import { sessions, users } from '../db/schema'
 import { hashSessionToken } from './token'
 
-export const getCurrentUser = async () => {
+export const getCurrentUser = async (): Promise<{
+  id: string
+  email: string
+} | null> => {
   const cookieStore = await cookies()
   const rawToken = cookieStore.get('session')?.value
 
@@ -33,4 +37,17 @@ export const getCurrentUser = async () => {
     id: row.id,
     email: row.email,
   }
+}
+
+export const deleteSession = async (): Promise<null | undefined> => {
+  const cookieStore = await cookies()
+  const rawToken = cookieStore.get('session')?.value
+
+  if (!rawToken) {
+    return null
+  }
+
+  const tokenHash = hashSessionToken(rawToken)
+
+  await db.delete(sessions).where(eq(sessions.tokenHash, tokenHash))
 }
