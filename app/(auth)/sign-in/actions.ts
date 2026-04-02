@@ -86,5 +86,5 @@ export const signInAction = async (
     }
   }
 
-  redirect('/library')
+  redirect('/index')
 }

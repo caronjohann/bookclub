@@ -1,5 +1,5 @@
-const LibraryPage = async () => {
-  return <h1>Library page</h1>
+const IndexPage = async () => {
+  return <h1>Index page</h1>
 }
 
-export default LibraryPage
+export default IndexPage
