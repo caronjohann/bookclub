@@ -9,7 +9,7 @@ const AuthLayout = async ({
   const user = await getCurrentUser()
 
   if (user) {
-    redirect('/library')
+    redirect('/index')
   }
 
   return children

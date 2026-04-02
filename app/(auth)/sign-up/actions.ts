@@ -99,5 +99,5 @@ export const signUpAction = async (
     }
   }
 
-  redirect('/library')
+  redirect('/index')
 }

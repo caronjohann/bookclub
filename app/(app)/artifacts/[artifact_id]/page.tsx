@@ -1,5 +1,5 @@
-const BookPage = () => {
-  return <h1>Book page</h1>
+const ArtifactPage = () => {
+  return <h1>Artifact page</h1>
 }
 
-export default BookPage
+export default ArtifactPage
