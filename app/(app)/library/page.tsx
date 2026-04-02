@@ -1,4 +1,4 @@
-const LibraryPage = () => {
+const LibraryPage = async () => {
   return <h1>Library page</h1>
 }
 
