@@ -80,8 +80,8 @@ export const signUpAction = async (
     })
 
     await setSessionCookie(rawToken, expiresAt)
-  } catch (error) {
-    const postgresError = getPostgresErrorDetails(error)
+  } catch (err) {
+    const postgresError = getPostgresErrorDetails(err)
 
     if (postgresError?.code === '23505' && postgresError.constraint === 'users_email_unique') {
       return {
@@ -90,7 +90,7 @@ export const signUpAction = async (
       }
     }
 
-    console.error(error)
+    console.error(err)
 
     return {
       success: false,

@@ -76,8 +76,8 @@ export const signInAction = async (
     await db.insert(sessions).values({ userId: user.id, tokenHash, expiresAt })
 
     await setSessionCookie(rawToken, expiresAt)
-  } catch (error) {
-    console.error(error)
+  } catch (err) {
+    console.error(err)
 
     return {
       success: false,
