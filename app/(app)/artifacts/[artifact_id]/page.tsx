@@ -1,5 +1,3 @@
-const ArtifactPage = () => {
+export default function Page() {
   return <h1>Artifact page</h1>
 }
-
-export default ArtifactPage

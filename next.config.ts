@@ -1,7 +1,23 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  serverExternalPackages: ['sharp'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lfunurymdjav7liv.public.blob.vercel-storage.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.vimeocdn.com',
+      },
+    ],
+  },
+}
 
-export default nextConfig;
+export default nextConfig
