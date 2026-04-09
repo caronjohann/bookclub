@@ -15,6 +15,27 @@
       "when": 1774725711961,
       "tag": "0001_hesitant_microbe",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1775254334422,
+      "tag": "0002_classy_husk",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1775335838379,
+      "tag": "0003_fast_mandarin",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1775519052767,
+      "tag": "0004_little_chimera",
+      "breakpoints": true
     }
   ]
 }
