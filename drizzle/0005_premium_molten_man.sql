@@ -1,0 +1,1 @@
+ALTER TABLE "collections" ADD COLUMN "is_private" boolean DEFAULT true NOT NULL;

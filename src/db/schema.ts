@@ -1,5 +1,6 @@
 import { sql } from 'drizzle-orm'
 import {
+  boolean,
   check,
   index,
   integer,
@@ -48,6 +49,7 @@ export const collections = pgTable(
       .references(() => users.id, { onDelete: 'cascade' }),
     name: text('name').notNull(),
     normalizedName: text('normalized_name').notNull(),
+    isPrivate: boolean('is_private').default(true).notNull(),
     createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
   },
   (table) => [
