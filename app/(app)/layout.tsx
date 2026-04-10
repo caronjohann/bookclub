@@ -1,5 +1,6 @@
 import { getCurrentUser } from '@/src/auth/session'
 import LogoutButton from '@/src/components/LogoutButton'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
 const AppLayout = async ({
@@ -17,6 +18,7 @@ const AppLayout = async ({
     <div>
       <nav>
         <LogoutButton />
+        <Link href={`/users/${user.id}`}>Profile</Link>
       </nav>
       {children}
     </div>
