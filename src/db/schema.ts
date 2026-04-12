@@ -57,6 +57,9 @@ export const collections = pgTable(
   ],
 )
 
+export type Archive = typeof collections.$inferSelect
+export type NewArchive = typeof collections.$inferInsert
+
 export const artifacts = pgTable(
   'artifacts',
   {
