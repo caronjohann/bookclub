@@ -8,7 +8,7 @@ Catalog is a personal archiving application built for designers and developers t
 ### The Stack
 
 * **Frontend:** Next.js (App Router), React, TypeScript
-* **Styling:** Tailwind CSS (Focusing on fluid layouts and refined typography)
+* **Styling:** Tailwind CSS
 * **Database & ORM:** PostgreSQL with Drizzle ORM
 * **Architecture:** Server Actions for type-safe data mutations
 
@@ -20,4 +20,4 @@ Catalog is a personal archiving application built for designers and developers t
 
 ### Why I'm Building This
 
-As an engineer with a background in Visual Arts, I found a gap in tools that handle visual inspiration with both technical efficiency and aesthetic care. **Catalog** is my solution for bridging that gap, serving as both a functional tool and a playground for testing the latest shifts in the Next.js ecosystem.
+As an engineer with a background in Visual Arts, I found a gap in tools that handle visual inspiration with both technical efficiency and aesthetic care. **Catalog** is my solution for bridging that gap, serving as both a functional tool and a playground for testing the latest shifts in Next.js.
